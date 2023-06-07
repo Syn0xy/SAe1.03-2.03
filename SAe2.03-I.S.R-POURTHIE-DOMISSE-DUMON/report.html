@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rapports S2.03 I.S.R</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css/pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Rapports S2.03 I.S.R</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#installation-debian-automatisée-par-pré-configuration"
+id="toc-installation-debian-automatisée-par-pré-configuration"><strong>Installation
+Debian automatisée par pré-configuration</strong></a>
+<ul>
+<li><a href="#quest-ce-que-le-projet-debian-doù-vient-le-nom-debian"
+id="toc-quest-ce-que-le-projet-debian-doù-vient-le-nom-debian">1.
+Qu’est-ce que le Projet Debian ? D’où vient le nom Debian ?</a></li>
+<li><a
+href="#il-existe-3-durées-de-prise-en-charge-support-de-ces-versions-la-durée-minimale-la-durée-en-support-long-terme-lts-et-la-durée-en-support-long-terme-étendue-elts.-quelles-sont-les-durées-de-ces-prises-en-charge"
+id="toc-il-existe-3-durées-de-prise-en-charge-support-de-ces-versions-la-durée-minimale-la-durée-en-support-long-terme-lts-et-la-durée-en-support-long-terme-étendue-elts.-quelles-sont-les-durées-de-ces-prises-en-charge">2.
+Il existe 3 durées de prise en charge (support) de ces versions : la
+durée minimale, la durée en support long terme (LTS) et la durée en
+support long terme étendue (ELTS). Quelles sont les durées de ces prises
+en charge ?</a></li>
+<li><a
+href="#pendant-combien-de-temps-les-mises-à-jour-de-sécurité-seront-elles-fournies"
+id="toc-pendant-combien-de-temps-les-mises-à-jour-de-sécurité-seront-elles-fournies">3.
+Pendant combien de temps les mises à jour de sécurité seront-elles
+fournies ?</a></li>
+<li><a
+href="#combien-de-versions-au-minimum-sont-activement-maintenues-par-debian-donnez-leur-nom"
+id="toc-combien-de-versions-au-minimum-sont-activement-maintenues-par-debian-donnez-leur-nom">4.
+Combien de versions au minimum sont activement maintenues par Debian ?
+Donnez leur nom</a></li>
+<li><a
+href="#chaque-distribution-majeure-possède-un-nom-de-code-différent.-par-exemple-la-version-majeure"
+id="toc-chaque-distribution-majeure-possède-un-nom-de-code-différent.-par-exemple-la-version-majeure">5.
+Chaque distribution majeure possède un nom de code différent. Par
+exemple, la version majeure</a></li>
+<li><a
+href="#lun-des-atouts-de-debian-fut-le-nombre-darchitectures-processeurs-officiellement-prises-en-charge.-combien-et-lesquelles-sont-prises-en-charge-par-la-version-bullseye"
+id="toc-lun-des-atouts-de-debian-fut-le-nombre-darchitectures-processeurs-officiellement-prises-en-charge.-combien-et-lesquelles-sont-prises-en-charge-par-la-version-bullseye">6.
+L’un des atouts de Debian fut le nombre d’architectures (≈ processeurs)
+officiellement prises en charge. Combien et lesquelles sont prises en
+charge par la version Bullseye ?</a></li>
+<li><a href="#première-version-avec-un-nom-de-code"
+id="toc-première-version-avec-un-nom-de-code">7. Première version avec
+un nom de code</a></li>
+<li><a href="#dernier-nom-de-code-attribué"
+id="toc-dernier-nom-de-code-attribué">8. Dernier nom de code
+attribué</a></li>
+</ul></li>
+<li><a href="#gitea" id="toc-gitea"><strong>Gitea</strong></a>
+<ul>
+<li><a
+href="#quelle-sera-la-ligne-de-commande-git-pour-utiliser-par-défaut-le-proxy-de-luniversité-sur-tous-vos-projets-git"
+id="toc-quelle-sera-la-ligne-de-commande-git-pour-utiliser-par-défaut-le-proxy-de-luniversité-sur-tous-vos-projets-git">Quelle
+sera la ligne de commande git pour utiliser par défaut le proxy de
+l’université sur tous vos projets git ?</a></li>
+<li><a href="#quest-ce-que-gitea" id="toc-quest-ce-que-gitea">Qu’est-ce
+que Gitea ?</a></li>
+<li><a
+href="#à-quels-logiciels-bien-connus-dans-ce-domaine-peut-on-le-comparer-en-citer-au-moins-2"
+id="toc-à-quels-logiciels-bien-connus-dans-ce-domaine-peut-on-le-comparer-en-citer-au-moins-2">À
+quels logiciels bien connus dans ce domaine peut-on le comparer (en
+citer au moins 2) ?</a></li>
+<li><a
+href="#comment-faire-pour-la-mettre-à-jour-sans-devoir-tout-reconfigurer-essayez-en-mettant-à-jour-vers-la-version-1.19"
+id="toc-comment-faire-pour-la-mettre-à-jour-sans-devoir-tout-reconfigurer-essayez-en-mettant-à-jour-vers-la-version-1.19">Comment
+faire pour la mettre à jour sans devoir tout reconfigurer ? Essayez en
+mettant à jour vers la version 1.19</a></li>
+</ul></li>
+<li><a href="#création-machine-virtuelle"
+id="toc-création-machine-virtuelle"><strong>Création machine
+virtuelle</strong></a>
+<ul>
+<li><a href="#création-de-la-machine-virtuelle"
+id="toc-création-de-la-machine-virtuelle">Création de la machine
+virtuelle</a></li>
+<li><a href="#installation-de-los"
+id="toc-installation-de-los">Installation de l’OS</a></li>
+<li><a href="#préparation-du-système"
+id="toc-préparation-du-système">Préparation du système</a></li>
+<li><a href="#installation-des-suppléments-invités"
+id="toc-installation-des-suppléments-invités">Installation des
+suppléments invités</a></li>
+<li><a href="#précision-sur-le-proxy"
+id="toc-précision-sur-le-proxy">Précision sur le Proxy</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="installation-debian-automatisée-par-pré-configuration"><strong>Installation
+Debian automatisée par pré-configuration</strong></h1>
+<hr />
+<h2 id="quest-ce-que-le-projet-debian-doù-vient-le-nom-debian">1.
+Qu’est-ce que le Projet Debian ? D’où vient le nom Debian ?</h2>
+<blockquote>
+<p>Le nom du projet est prononcé Deb’-i-an, avec un e court dans Deb et
+l’accentuation portée sur la première syllabe. Ce mot est la contraction
+des noms Debra et Ian Murdock, qui a fondé le projet</p>
+</blockquote>
+<p><a
+href="https://www.debian.org/doc/manuals/debian-faq/basic-defs.fr.html#pronunciation">Lien
+vers la source(pronunciation)</a></p>
+<hr />
+<h2
+id="il-existe-3-durées-de-prise-en-charge-support-de-ces-versions-la-durée-minimale-la-durée-en-support-long-terme-lts-et-la-durée-en-support-long-terme-étendue-elts.-quelles-sont-les-durées-de-ces-prises-en-charge">2.
+Il existe 3 durées de prise en charge (support) de ces versions : la
+durée minimale, la durée en support long terme (LTS) et la durée en
+support long terme étendue (ELTS). Quelles sont les durées de ces prises
+en charge ?</h2>
+<blockquote>
+<p>Durée minimale : version BULLSEYE</p>
+<p>durée LTS : version BUSTER</p>
+<p>durée ELTS : version JESSIE / STRETCH</p>
+</blockquote>
+<p><a href="https://www.debian.org/releases/">Lien vers la
+source(releases)</a></p>
+<p><a href="https://wiki.debian.org/fr/LTS/Extended">Lien vers la
+source(extended)</a></p>
+<hr />
+<h2
+id="pendant-combien-de-temps-les-mises-à-jour-de-sécurité-seront-elles-fournies">3.
+Pendant combien de temps les mises à jour de sécurité seront-elles
+fournies ?</h2>
+<blockquote>
+<p>L’équipe chargée de la sécurité essaye de prendre en charge la
+distribution stable environ une année après que la version stable
+suivante a été publiée, sauf lorsqu’une autre distribution stable est
+publiée la même année. Il n’est pas possible de prendre en charge trois
+distributions, c’est déjà bien assez difficile avec deux.</p>
+</blockquote>
+<p><a href="https://www.debian.org/security/faq#lifespan">Lien vers la
+source(faq lifespan)</a></p>
+<hr />
+<h2
+id="combien-de-versions-au-minimum-sont-activement-maintenues-par-debian-donnez-leur-nom">4.
+Combien de versions au minimum sont activement maintenues par Debian ?
+Donnez leur nom</h2>
+<blockquote>
+<p>Il y a trois distributions majeures :</p>
+</blockquote>
+<ul>
+<li><p>la distribution “stable”</p></li>
+<li><p>la distribution “testing”</p></li>
+<li><p>la distribution “unstable”</p></li>
+</ul>
+<p><a
+href="https://www.debian.org/doc/manuals/debian-faq/ftparchives.fr.html#dists">Lien
+vers la source(FAQ Debian (6.1. Combien de distributions de Debian y
+a-t-il ?))</a></p>
+<hr />
+<h2
+id="chaque-distribution-majeure-possède-un-nom-de-code-différent.-par-exemple-la-version-majeure">5.
+Chaque distribution majeure possède un nom de code différent. Par
+exemple, la version majeure</h2>
+<blockquote>
+<p>Bullseye vient du nom d’un personnage dans Toys Story</p>
+</blockquote>
+<p><a href="https://wiki.debian.org/fr/DebianBullseye">Lien vers la
+source(Bullseye)</a></p>
+<hr />
+<h2
+id="lun-des-atouts-de-debian-fut-le-nombre-darchitectures-processeurs-officiellement-prises-en-charge.-combien-et-lesquelles-sont-prises-en-charge-par-la-version-bullseye">6.
+L’un des atouts de Debian fut le nombre d’architectures (≈ processeurs)
+officiellement prises en charge. Combien et lesquelles sont prises en
+charge par la version Bullseye ?</h2>
+<ul>
+<li><a href="https://www.debian.org/ports/amd64/">PC 64 bits
+(amd64)</a></li>
+<li><a href="https://www.debian.org/ports/arm64/">ARM 64 bits
+(AArch64)</a></li>
+<li><a href="https://www.debian.org/ports/armel/">EABI ARM
+(armel)</a></li>
+<li><a href="https://www.debian.org/ports/armhf/">ARM avec unité de
+calcul flottant (armhf)</a></li>
+<li><a href="https://www.debian.org/ports/i386/">PC 32 bits
+(i386)</a></li>
+<li><a href="https://www.debian.org/ports/mipsel/">MIPS
+(petit-boutiste)</a></li>
+<li><a href="https://www.debian.org/ports/mips64el/">MIPS 64 bits
+(petit-boutiste)</a></li>
+<li><a href="https://www.debian.org/ports/ppc64el/">PowerPC 64 bits
+(petit-boutiste)</a></li>
+<li><a href="https://www.debian.org/ports/s390x/">System z</a></li>
+</ul>
+<p><a href="https://www.debian.org/releases/bullseye/">Lien vers la
+source(bullseye)</a></p>
+<hr />
+<h2 id="première-version-avec-un-nom-de-code">7. Première version avec
+un nom de code</h2>
+<ul>
+<li>Quel a était le premier nom de code utilisé ?</li>
+</ul>
+<blockquote>
+<p>Le nom de code utilisé était “Hamm” (Hamm (Debian 2.0) est la
+tirelire en forme de cochon dans Toy Story)</p>
+</blockquote>
+<ul>
+<li>Quand a-t-il été annoncé ?</li>
+</ul>
+<blockquote>
+<p>Le 03 février 1998</p>
+</blockquote>
+<ul>
+<li>Quel était le numéro de version de cette distribution ?</li>
+</ul>
+<blockquote>
+<p>Debian 2.0</p>
+</blockquote>
+<p><a href="https://www.debian.org/releases/index.fr.html">Lien vers la
+source(releases)</a></p>
+<hr />
+<h2 id="dernier-nom-de-code-attribué">8. Dernier nom de code
+attribué</h2>
+<ul>
+<li>Quel est le dernier nom de code annoncé à ce jour ?</li>
+</ul>
+<blockquote>
+<p>Le dernier nom de code annoncé est Trixie</p>
+</blockquote>
+<ul>
+<li>Quand a-t-il été annoncé ?</li>
+</ul>
+<blockquote>
+<p>Il a été annoncé le 08-11-2020</p>
+</blockquote>
+<ul>
+<li>Quelle est la version de cette distribution ?</li>
+</ul>
+<blockquote>
+<p>La version de cette distribution est Debian 13</p>
+</blockquote>
+<p><a href="https://wiki.debian.org/fr/DebianTrixie">Lien vers la
+source(Trixie)</a></p>
+<h1 id="gitea"><strong>Gitea</strong></h1>
+<p>Tout d’abord, en ayant recréé une machine virtuelle avec les mêmes
+informations que la précédente nous allons installer tout ce qui est
+nécessaire automatiquement.</p>
+<p>Dès son premier lancement, nous allons choisir une méthode
+d’installation qui est différente, et qui celle- ci sera automatique et
+donc qui sera plus rapide et plus simple.</p>
+<p>Tout d’abord il vous faudra télécharger ce fichier pour le
+décompresser dans le répertoire de la machine virtuelle. Le répertoire
+doit ressembler à ceci :
+/usr/local/virtual_machine/infoetu/<code>votre_login</code></p>
+<p>Une fois ceci réalisé, placez vous dans le fichier de votre machine
+virtuelle et écrivez cette commande :</p>
+<pre><code>sed -i -E &quot;s/(--iprt-iso-maker-file-marker-bourne-sh).*$/\1=$(cat /proc/sys/kernel/random/uuid)/&quot; S203-Debian11.viso</code></pre>
+<p>Ensuite une fois ceci réalisé, il vous faudra aller sur Virtualbox et
+aller au même endroit que ci-dessous, dans les paramètres de la machine
+virtuelle, puis stockage et enfin sélectionner la même partie en
+bleu</p>
+<div class="resize">
+<figure>
+<img src="img/image1.png" alt="Image1" />
+<figcaption aria-hidden="true">Image1</figcaption>
+</figure>
+</div>
+<p>Cliquez sur le logo du disque bleu tout à droite puis sélectionnez le
+fichier S203_Debian11.viso La machine virtuelle est maintenant prête à
+être lancée ! Vous aurez des téléchargements de ce type à son lancement,
+c’est normal c’est l’auto-installation.</p>
+<div class="resize">
+<figure>
+<img src="img/image2.png" alt="Image2" />
+<figcaption aria-hidden="true">Image2</figcaption>
+</figure>
+</div>
+<p>La machine est donc installée, les identifiants pour se connecter
+sont soir root (avec comme mot de passe root) ou sois user (avec comme
+mot de passe user). Mais on peut remarquer qu’il manque certaines choses
+assez pratiques, comme l’interface graphique qui n’est pas présente.</p>
+<div class="resize">
+<figure>
+<img src="img/image3.png" alt="Image3" />
+<figcaption aria-hidden="true">Image3</figcaption>
+</figure>
+</div>
+<p>Comme vous pouvez le voir ce n’est pas très pratique d’avoir
+uniquement un fond noir pour faire ses propres commandes. C’est pourquoi
+nous allons ajouter quelques fonctionnalités dans l’auto-installation
+pour tout améliorer, nous aurons comme fonctionnalités :</p>
+<ul>
+<li>Ajouter les droits sudo a “user“ (ce qui correspond aux droits
+administrateurs),</li>
+<li>Installer l’environnement Mate afin d’avoir un vrai interface
+graphique,</li>
+<li>Installer quelques paquets comme git, bash-completion etc…</li>
+</ul>
+<p>Pour ajouter tout cela, il faut aller dans le fichier “preseed-fr”,
+puis ajouter les valeurs écrites ci dessous :</p>
+<ul>
+<li>Ajouter ligne 56 : d-i passwd/user-default-groups string audio cdrom
+video sudo</li>
+<li>Ajouter ligne 83 : tasksel tasksel/first multiselect standard
+ssh-server mate-desktop d-i pkgsel/include string sudo git sqlite3 curl
+bash-completion neofetch</li>
+</ul>
+<p>Nous allons ensuite commencer à s’occuper de l’installation du
+logiciel git, tout d’abord assurez vous de bien être connecté avec le
+compte “user”.</p>
+<div class="resize">
+<figure>
+<img src="img/image4.png" alt="Image4" />
+<figcaption aria-hidden="true">Image4</figcaption>
+</figure>
+</div>
+<p>Évidemment il vous faut remplacer les informations entre guillemet
+par vos informations sauf pour “master” qui doit rester comme il
+est.</p>
+<p>Ensuite nous allons installer un nouveau paquet, qui est le paquet
+git-gui. Il permet d’avoir une interface graphique pour le système de
+gestion de version git. Git permet de suivre l’évolution d’un projet en
+enregistrant des instantanés, appelés “commits”, du code source à
+différents moments. Pour installer ce paquet nous allons d’abord update
+le paquet nommé “apt” permettant d’installer d’autres paquets. Avec la
+commande suivante :</p>
+<pre><code>sudo apt update</code></pre>
+<p>Puis ensuite la commande suivante pour installer git-gui :</p>
+<pre><code>sudo apt install git-gui</code></pre>
+<h2
+id="quelle-sera-la-ligne-de-commande-git-pour-utiliser-par-défaut-le-proxy-de-luniversité-sur-tous-vos-projets-git">Quelle
+sera la ligne de commande git pour utiliser par défaut le proxy de
+l’université sur tous vos projets git ?</h2>
+<ul>
+<li>Git Gui est l’interface graphique d’un outil en ligne de commande.
+De ce fait, toutes les possibilités offertes par Git ne sont pas
+disponibles dans Git Gui. Il se lance comme une application, dans un
+terminal et possède une interface graphique.</li>
+</ul>
+<p><a href="http://codeur-pro.fr/git-gui-guide-complet/">Lien vers la
+source(guide)</a></p>
+<p>gitk peut être un outil d’apprentissage utile pour ceux qui
+découvrent le contrôle de version, ou ceux qui migrent depuis un autre
+système de contrôle de version comme Subversion. C’est un utilitaire
+pratique qui est fourni avec le noyau Git. Il fournit une interface
+utilisateur graphique qui aide à la visualisation de la mécanique
+interne de Git. Il se lance aussi de la même façon que Git Gui.</p>
+<p><a href="https://www.atlassian.com/fr/git/tutorials/gitk">Lien vers
+la source(tutorials gitk)</a></p>
+<p>Voici les lignes de commande pour utiliser par défaut le proxy de
+l’université sur tous nos projets git :</p>
+<pre><code>git config --global http.proxy http://proxy.universite.fr:8080
+git config --global https.proxy http://proxy.universite.fr:8080</code></pre>
+<p>Il nous reste ensuite à préparer tout ce qui est nécessaire pour
+rediriger les messages vers le port 3000. Vous devez aller dans les
+paramètres de la machine virtuelle et dans la partie réseau cliquez sur
+“avancé” puis sur la redirection de ports et rentre les informations
+comme ci dessous.</p>
+<div class="resize">
+<figure>
+<img src="img/image5.png" alt="Image5" />
+<figcaption aria-hidden="true">Image5</figcaption>
+</figure>
+</div>
+<h2 id="quest-ce-que-gitea">Qu’est-ce que Gitea ?</h2>
+<p>Gitea est une solution d’hébergement de code léger gérée par la
+communauté écrite en Go. Il est publié sous licence MIT. Gitea est un
+service Git auto-hébergé indolore. Il est similaire à GitHub, Bitbucket
+et GitLab.</p>
+<p><a href="https://docs.gitea.io/en-us/">Lien vers la source(doc
+gitea)</a></p>
+<h2
+id="à-quels-logiciels-bien-connus-dans-ce-domaine-peut-on-le-comparer-en-citer-au-moins-2">À
+quels logiciels bien connus dans ce domaine peut-on le comparer (en
+citer au moins 2) ?</h2>
+<p>Gitea est comparable avec Github ou même Gitlab qui sont assez
+connus.</p>
+<p>Nous allons maintenant nous préoccuper de l’installation de gitea à
+l’aide de fichier binaire compilé (Qui sont des fichiers permettant
+l’installation).</p>
+<p>La commande suivante permettra d’installer tout d’abord gitea en
+version 1.18.5 :</p>
+<pre><code>wget -O gitea https://dl.gitea.com/gitea/1.18.5/gitea-1.18.5-linux-amd64
+chmod +x gitea</code></pre>
+<p>Gitea est donc normalement bien installé, on peut le vérifier avec
+cette commande :</p>
+<pre><code>systemctl status gitea.service</code></pre>
+<p>Si cette commande explique comment résoudre le problème dû au fait
+que ce n’est pas correctement installé, c’est que vous avez fait une
+erreur dans l’installation.</p>
+<p>Ensuite dans la machine virtuelle, placez vous dans ce fichier grâce
+à “nano” :</p>
+<pre><code>/etc/systemd/system/gitea.service</code></pre>
+<p>Une fois dedans écrivez ces lignes de commandes :</p>
+<pre><code>[Unit]
+Description=Gitea (Git with a cup of tea)
+After=syslog.target
+After=network.target
+
+[Service]
+RestartSec=2s
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/var/lib/gitea/
+ExecStart=/usr/local/bin/gitea web --config /etc/gitea/app.ini
+Restart=always
+Environment=USER=user HOME=/home/git GITEA_WORK_DIR=/var/lib/gitea
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<p><a
+href="https://github.com/go-gitea/gitea/blob/main/contrib/systemd/gitea.service">Lien
+vers la source(gitea service)</a> <a
+href="https://docs.gitea.io/en-us/linux-service/">Lien vers la
+source(linux service)</a></p>
+<p>Ensuite il nous faut activer gitea grâce aux commandes suivantes
+:</p>
+<pre><code>sudo systemctl enable gitea
+sudo systemctl start gitea</code></pre>
+<p>Nous allons désormais faire en sorte que git se lance automatiquement
+à chaque démarrage de la machine virtuelle. Ecrivez les commandes
+suivantes pour permettre le lancement automatique de gitea :</p>
+<pre><code>sudo systemctl deamon-reload
+sudo systemctl enable gitea.service</code></pre>
+<p>Puis la commande suivante pour vérifier que tout fonctionne bien
+:</p>
+<pre><code>sudo systemctl start gitea.service</code></pre>
+<p>On peut donc se permettre d’aller sur l’url suivant depuis la machine
+virtuelle : <code>http://localhost:3000</code> Normalement, si toute les
+étapes ont été réalisées comme demandées vous devez arriver sur ce site
+:</p>
+<div class="resize">
+<figure>
+<img src="img/image6.png" alt="Image6" />
+<figcaption aria-hidden="true">Image6</figcaption>
+</figure>
+</div>
+<p>Le compte administrateur web sera :</p>
+<ul>
+<li><p>Nom : gitea</p></li>
+<li><p>Password : gitea</p></li>
+<li><p>Email : git@localhost</p></li>
+</ul>
+<h2
+id="comment-faire-pour-la-mettre-à-jour-sans-devoir-tout-reconfigurer-essayez-en-mettant-à-jour-vers-la-version-1.19">Comment
+faire pour la mettre à jour sans devoir tout reconfigurer ? Essayez en
+mettant à jour vers la version 1.19</h2>
+<p>Pour installer la version 1.19 il faut tout d’abord stopper la
+version actuelle.</p>
+<pre><code>sudo systemctl stop gitea.service</code></pre>
+<p>Puis il faut installer la version 1.19 :</p>
+<pre><code>wget -O /tmp/gitea https://dl.gitea.io/gitea/1.19/gitea-1.19-linux-amd64</code></pre>
+<p>Il nous reste plus qu’à activer la dernière version installée :</p>
+<pre><code>sudo systemctl start gitea.service</code></pre>
+<p>Tout est maintenant parfait, vous pouvez utiliser gitea comme vous le
+souhaitez. Vous pouvez même faire l’ajout de différents projets pour
+vérifier que tout fonctionne bien.</p>
+<h1 id="création-machine-virtuelle"><strong>Création machine
+virtuelle</strong></h1>
+<h2 id="création-de-la-machine-virtuelle">Création de la machine
+virtuelle</h2>
+<p>Nous insérons les caractéristiques à respecter comme le nom de la
+nouvelle machine virtuelle sera <code>sae203</code>.</p>
+<div class="resize">
+<figure>
+<img src="img/image21.png" alt="Image21" />
+<figcaption aria-hidden="true">Image21</figcaption>
+</figure>
+</div>
+<p>Elle sera installer dans le dossier
+<code>/usr/local/virtual_machine/infoetu/</code><strong><code>login</code></strong>
+avec un système d’exploitation <code>Linux</code> sous
+<code>Debian (64-bit)</code>.</p>
+<hr />
+Une taille mémoire de <strong><code>2048 MB</code></strong>.
+<div class="resize">
+<figure>
+<img src="img/image22.png" alt="Image22" />
+<figcaption aria-hidden="true">Image22</figcaption>
+</figure>
+</div>
+<hr />
+<p>On définit la taille du disque dur sur
+<strong><code>20Go</code></strong>, et on laisse le reste
+<strong><code>par défaut</code></strong>.</p>
+<div class="resize">
+<figure>
+<img src="img/image23.png" alt="Image23" />
+<figcaption aria-hidden="true">Image23</figcaption>
+</figure>
+</div>
+<h3 id="que-signifie-64-bit-dans-debian-64-bit">Que signifie “64-bit”
+dans “Debian 64-bit” ?</h3>
+<blockquote>
+<p>Debian 64 bit, le 64 signifie la longueur du registre mémoire que
+peut manipuler un processeur.</p>
+</blockquote>
+<h3 id="quelle-est-la-configuration-réseau-utilisée-par-défaut">Quelle
+est la configuration réseau utilisée par défaut ?</h3>
+<blockquote>
+<p>La configuration réseau est NAT.</p>
+</blockquote>
+<h3
+id="quel-est-le-nom-du-fichier-xml-contenant-la-configuration-de-votre-machine">Quel
+est le nom du fichier XML contenant la configuration de votre machine
+?</h3>
+<p>PAS TROUVER.</p>
+<h2 id="installation-de-los">Installation de l’OS</h2>
+<p>Au lancement de la machine virtuelle, on va laisser tout
+<strong><code>par défaut</code></strong> sauf pour :</p>
+Le nom de la machine va s’appeler <strong><code>serveur</code></strong>.
+<div class="resize">
+<figure>
+<img src="img/image24.png" alt="Image24" />
+<figcaption aria-hidden="true">Image24</figcaption>
+</figure>
+</div>
+<hr />
+On choisi la langue <strong><code>Français</code></strong>.
+<div class="resize">
+<figure>
+<img src="img/image25.png" alt="Image25" />
+<figcaption aria-hidden="true">Image25</figcaption>
+</figure>
+</div>
+<hr />
+On va ensuite choisir le miroir :
+<code>http://debian.polytech-lille.fr</code>.
+<div class="resize">
+<figure>
+<img src="img/image26.png" alt="Image26" />
+<figcaption aria-hidden="true">Image26</figcaption>
+</figure>
+</div>
+<hr />
+Le proxy utilisé sera <code>http://cache.univ-lille.fr:3128</code>.
+<div class="resize">
+<figure>
+<img src="img/image27.png" alt="Image27" />
+<figcaption aria-hidden="true">Image27</figcaption>
+</figure>
+</div>
+<hr />
+On donne le mot de passe <code>root</code> à l’utilisateur
+<code>root</code>, puis on réécrit le même mot de passe pour confirmer.
+<div class="resize">
+<figure>
+<img src="img/image28.png" alt="Image28" />
+<figcaption aria-hidden="true">Image28</figcaption>
+</figure>
+</div>
+<hr />
+Le nouvel utilisateur se nommera <code>User</code>.
+<div class="resize">
+<figure>
+<img src="img/image29.png" alt="Image29" />
+<figcaption aria-hidden="true">Image29</figcaption>
+</figure>
+</div>
+<hr />
+L’identifiant de cet utilisateur sera <code>user</code>.
+<div class="resize">
+<figure>
+<img src="img/image30.png" alt="Image30" />
+<figcaption aria-hidden="true">Image30</figcaption>
+</figure>
+</div>
+<hr />
+Il aura pour mot de passe <code>user</code>, il faudra ensuite le
+réécrire pour confirmer.
+<div class="resize">
+<figure>
+<img src="img/image31.png" alt="Image31" />
+<figcaption aria-hidden="true">Image31</figcaption>
+</figure>
+</div>
+<hr />
+<p>Dans les paquetages des logiciels à préinstaller il faut sélectionner
+uniquement ceux suivant :</p>
+<ul>
+<li>environnement de bureau Debian</li>
+<li>MATE</li>
+<li>serveur web</li>
+<li>serveur SSH</li>
+<li>utilitaire usuels du système</li>
+</ul>
+<div class="resize">
+<figure>
+<img src="img/image32.png" alt="Image32" />
+<figcaption aria-hidden="true">Image32</figcaption>
+</figure>
+</div>
+<hr />
+<h3 id="quest-ce-quun-fichier-iso-bootable">Qu’est-ce qu’un fichier iso
+bootable ?</h3>
+<blockquote>
+<p>Les ISO sont généralement utilisés pour fournir les fichiers
+d’installation de systèmes d’exploitation (Exemple : Windows ou
+Linux).</p>
+</blockquote>
+<h3 id="quest-ce-que-mate-gnome">Qu’est-ce que MATE ? GNOME ?</h3>
+<blockquote>
+<p>MATE est un environnement de bureau attractif et intuitif en se
+basant sur les métaphores traditionnelles pour des systèmes
+d’exploitation similaires à Unix.</p>
+</blockquote>
+<blockquote>
+<p>GNOME est un acronyme de GNU Network Object Model Environment, c’est
+un environnement de bureau libre convivial qui a pour objectif est de
+rendre plus accessible l’utilisation du système d’exploitation GNU.</p>
+</blockquote>
+<h3 id="quest-ce-quun-serveur-web">Qu’est-ce qu’un serveur web ?</h3>
+<blockquote>
+<p>Un serveur web est un ordinateur qui stocke les fichiers qui
+composent un site web, comme les documents HTML, les images, les
+feuilles du style CSS ou encore les fichiers JavaScript, afin de les
+envoyer à l’appareil de l’utilisateur qui visite le site.</p>
+</blockquote>
+<h3 id="quest-ce-quun-serveur-ssh">Qu’est-ce qu’un serveur ssh ?</h3>
+<blockquote>
+<p>SSH signifie Secure Socket Shell, c’est un protocole réseau qui
+permet aux administrateurs d’accéder à distance à un ordinateur en toute
+sécurité.</p>
+</blockquote>
+<h3 id="quest-ce-quun-serveur-mandataire">Qu’est-ce qu’un serveur
+mandataire ?</h3>
+<blockquote>
+<p>Un serveur mandataire (soit serveur proxy en anglais), est un filtre
+qui permet de changer les règles d’accès à un réseau comme Internet, à
+cause des risques que peut représenter une connexion normale dans
+certains cas.</p>
+</blockquote>
+<h2 id="préparation-du-système">Préparation du système</h2>
+<h3
+id="pour-passer-en-mode-console-il-faut-désormais-effectuer-la-suite-de-touches-suivantes">Pour
+passer en mode console Il faut désormais effectuer la suite de touches
+suivantes</h3>
+<pre><code>Ctrl + Alt + F1</code></pre>
+<h3
+id="une-fois-dans-la-console-il-faut-passer-en-mode-sudo-avec-root-en-faisant">Une
+fois dans la console, il faut passer en mode sudo avec root en
+faisant</h3>
+<pre><code>usermod -aG sudo user</code></pre>
+<h3
+id="comment-peut-on-savoir-à-quels-groupes-appartient-lutilisateur-user">Comment
+peut-on savoir à quels groupes appartient l’utilisateur “user” ?</h3>
+<pre><code>nano /etc/group | grep user</code></pre>
+<h2 id="installation-des-suppléments-invités">Installation des
+suppléments invités</h2>
+<h3
+id="on-va-donc-devoir-écrire-les-commandes-suivantes-pour-mount-le-cd">On
+va donc devoir écrire les commandes suivantes pour mount le cd</h3>
+<pre><code>sudo mount /dev/cdrom /mnt</code></pre>
+<h3
+id="nous-allons-ensuite-installer-les-suppléments-avec-cette-commande">Nous
+allons ensuite installer les suppléments avec cette commande</h3>
+<pre><code>sudo /mnt/VBoxLinuxAdditions.run</code></pre>
+<p>Une fois ceci tout est presque bon, il ne reste plus que le proxy à
+faire.</p>
+<h3
+id="quelle-est-la-version-du-noyau-linux-utilisé-par-votre-vm-noubliez-pas-comme-pour-toutes-les-questions-de-justifier-votre-réponse">Quelle
+est la version du noyau Linux utilisé par votre VM ? N’oubliez pas,
+comme pour toutes les questions, de justifier votre réponse</h3>
+<pre><code>uname -r</code></pre>
+<p>cette commande donne la réponse suivante :</p>
+<blockquote>
+<p>5.10.0-21-amd64</p>
+</blockquote>
+<h3
+id="à-quoi-servent-les-suppléments-invités-donner-2-principales-raisons-de-les-installer">À
+quoi servent les suppléments invités ? Donner 2 principales raisons de
+les installer</h3>
+<blockquote>
+<p>A ceux que la taille de la fenêtre de la machine virtuelle s’adapte à
+la taille de l’écran de la machine courante.</p>
+</blockquote>
+<h3
+id="à-quoi-sert-la-commande-mount-dans-notre-cas-de-figure-et-dans-le-cas-général">À
+quoi sert la commande mount (dans notre cas de figure et dans le cas
+général) ?</h3>
+<blockquote>
+<p>La commande mount permet de monter une clé USB ou un disque dur, elle
+monte un système de fichiers indiqué comme répertoire à l’aide du
+paramètre.</p>
+</blockquote>
+<h2 id="précision-sur-le-proxy">Précision sur le Proxy</h2>
+<p>Pour configurer le proxy on écrit tout simplement les commandes
+suivantes dans le terminal :</p>
+<pre><code>export http_proxy=http://cache.univ-lille.fr:3128
+export https_proxy=$http_proxy</code></pre>
+<p>Ensuite on va aller écrire dans le $HOME/.bashrc une commande pour
+activer le proxy dès que l’on lance le terminal.</p>
+<p>On écrit ceci :</p>
+<pre><code>export http_proxy=http://cache.univ-lille.fr:3128 export https_proxy=$http_proxy</code></pre>
+</body>
+</html>

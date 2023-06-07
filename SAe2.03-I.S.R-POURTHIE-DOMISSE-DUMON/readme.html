@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Readme</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="css/pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Readme</h1>
+</header>
+<p><img src="img/iuta.png" /></p>
+<h1 id="rapport-s2.03-i.s.r">Rapport S2.03 I.S.R</h1>
+<h2 id="how-to-compile-and-run">How to compile and run</h2>
+<p><strong>Compile</strong></p>
+<ul>
+<li>Format <strong>HTML</strong> :</li>
+</ul>
+<pre><code>pandoc --toc --toc-depth=2 --standalone report.md -o report.html -c css/pandoc.css --metadata title=&quot;Rapport S2.03 I.S.R&quot;</code></pre>
+<ul>
+<li>Format <strong>PDF</strong> :</li>
+</ul>
+<pre><code>pandoc --pdf-engine=wkhtmltopdf .\report.html -t latex -o .\report.pdf</code></pre>
+<p><strong>Run</strong></p>
+<p>Double-click <code>report.html</code> or <code>report.pdf</code> to
+run.</p>
+<h2 id="help">Help</h2>
+<p>Si vous êtes sur windows, vous ne pourrez surement pas convertir le
+fichier en pdf, il faut donc installer wkhtmltopdf avec</p>
+<pre><code>choco install wkhtmltopdf</code></pre>
+<p>Si vous ne possedez pas chocolatey, il faut l’installer grâce a cette
+commande sur un terminal en tant qu’administrateur:</p>
+<pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))</code></pre>
+<h2 id="about">About</h2>
+<p>Cette archive contient :</p>
+<ul>
+<li>Les images et le css avec l’arborescence</li>
+<li>Le fichier <code>readme.md</code> non compilé</li>
+<li>Le fichier <code>readme.html</code> compilé</li>
+<li>Le fichier <code>report.md</code> non compilé</li>
+<li>Le fichier <code>report.html</code> compilé</li>
+<li>Le fichier <code>report.pdf</code> compilé</li>
+</ul>
+<h1 id="credits">Credits</h1>
+<ul>
+<li>Questionnaire - Antoine DOMISSE</li>
+<li>Questionnaire, Markdown - Antoine POURTHIÉ</li>
+<li>Questionnaire, Virtual machine - Axel DUMON</li>
+</ul>
+</body>
+</html>
